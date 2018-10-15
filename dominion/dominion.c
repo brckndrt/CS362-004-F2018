@@ -1242,7 +1242,7 @@ int great_hallCard(struct gameState *state, int handPos){
       state->numActions++;
 			
       //discard card from hand
-      discardCard(handPos, currentPlayer, state, 0);
+      //discardCard(handPos, currentPlayer, state, 0);
       return 0;
 }
 
@@ -1252,7 +1252,7 @@ int villageCard(struct gameState *state, int handPos){
       drawCard(currentPlayer, state);
 			
       //+2 Actions
-      state->numActions = state->numActions + 2;
+      state->numActions = state->numActions + 5;
 			
       //discard played card from hand
       discardCard(handPos, currentPlayer, state, 0);
@@ -1262,7 +1262,7 @@ int villageCard(struct gameState *state, int handPos){
 int adventurerCard(struct gameState *state){
 	 int currentPlayer = whoseTurn(state);
 	 int temphand[MAX_HAND];// moved above the if statement
- 	 int drawntreasure=0;
+ 	 int drawntreasure=1;
 	 int cardDrawn;
  	 int z = 0;// this is the counter for the temp hand
 	
@@ -1291,7 +1291,7 @@ int smithyCard(struct gameState *state, int handPos){
 	int currentPlayer = whoseTurn(state);
 	
 	//+3 Cards
-      for (i = 0; i < 3; i++)
+      for (i = 0; i > 3; i++)
 	{
 	  drawCard(currentPlayer, state);
 	}
