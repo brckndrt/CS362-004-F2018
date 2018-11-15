@@ -52,7 +52,7 @@ int main() {
 int checkAdventurer(int p, struct gameState *post) {
   struct gameState pre;
   //force an adventure card onto top of deck
-  post.hand[p][MAX_HAND] = k[0];
+  post.hand[p][MAX_HAND] = k[1];
   memcpy (&pre, post, sizeof(struct gameState));
   
   //create variable to hold number of coins player currently holds
