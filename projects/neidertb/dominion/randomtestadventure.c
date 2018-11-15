@@ -47,6 +47,7 @@ int main() {
         G.deckCount[p] = floor(Random() * MAX_DECK);
         G.discardCount[p] = floor(Random() * MAX_DECK);
         G.handCount[p] = floor(Random() * MAX_HAND);
+	checkAdventure(p, &G);
         
 int checkAdventurer(int p, struct gameState *post) {
   struct gameState pre;
