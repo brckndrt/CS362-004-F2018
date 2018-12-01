@@ -5,7 +5,12 @@ rngs.o: rngs.h rngs.c
 
 dominion.o: dominion.h dominion.c rngs.o
 	gcc -c dominion.c -g  $(CFLAGS)
-
+smithyCardTest: smithyCardTest.c dominion.o rngs.o
+       gcc -o smithyCardTest -g  smithyCardTest.c dominion.o rngs.o $(CFLAGS)
+       
+villageCardTest: villageCardTest.c dominion.o rngs.o
+       gcc -o villageCardTest -g  villageCardTest.c dominion.o rngs.o $(CFLAGS)
+       
 playdom: dominion.o playdom.c
 	gcc -o playdom playdom.c -g dominion.o rngs.o $(CFLAGS)
 #To run playdom you need to entere: ./playdom <any integer number> like ./playdom 10*/
